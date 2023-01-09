@@ -261,8 +261,8 @@ def generate_test_data():
             logging.info("Loaded documents from the %s", tornado.options.options.data_file)
 
         for item in json_array:
-            cmd = {'index': {'_index': tornado.options.options.index_name,
-                             '_type': tornado.options.options.index_type}}
+            cmd = {'index': {'_index': tornado.options.options.index_name}}
+#                              '_type': tornado.options.options.index_type}}
             if '_id' in item:
                 cmd['index']['_id'] = item['_id']
 
@@ -281,8 +281,8 @@ def generate_test_data():
             if out_file:
                 out_file.write("%s\n" % json.dumps(item))
 
-            cmd = {'index': {'_index': tornado.options.options.index_name,
-                             '_type': tornado.options.options.index_type}}
+            cmd = {'index': {'_index': tornado.options.options.index_name}}
+#                              '_type': tornado.options.options.index_type}}
             if '_id' in item:
                 cmd['index']['_id'] = item['_id']
 
